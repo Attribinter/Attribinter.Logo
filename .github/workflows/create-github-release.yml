@@ -1,0 +1,53 @@
+name: Create GitHub Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.2.0
+        with:
+          nuget-version: 6.x
+
+      - name: Setup GitVersion
+        uses: gittools/actions/gitversion/setup@v0
+        with:
+          versionSpec: 5.x
+
+      - name: Execute GitVersion
+        id: gitVersion
+        uses: gittools/actions/gitversion/execute@v0
+
+      - name: Create NuGet Packages
+        shell: bash
+        run: nuget pack nuget/logo.nuspec -Version "${{ steps.gitVersion.outputs.SemVer }}"
+
+      - name: Create GitHub Release
+        env:
+            GH_TOKEN: ${{ secrets.TRIGGER_TOKEN }}
+        shell: bash
+        run: |
+            files=$(find . -type f \( -name "*.nupkg" -o -name "*.snupkg" \))
+
+            if [ -n "$files" ]; then
+            gh config set prompt disabled
+            gh release create "v${{ steps.gitVersion.outputs.SemVer }}" $(echo $files) --title "v${{ steps.gitVersion.outputs.SemVer }}" --repo "${{ github.repository }}"
+            else
+            echo "No NuGet Packages detected, not creating GitHub Release."
+            fi
