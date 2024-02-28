@@ -1,3 +1,3 @@
 # Logo
 
-Hosts the logo used by `SharpAttributeParser`.
+Hosts the `Attribinter` logo.
