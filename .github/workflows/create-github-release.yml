@@ -16,7 +16,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
 
@@ -26,15 +26,15 @@ jobs:
           nuget-version: 6.x
 
       - name: Setup GitVersion
-        uses: gittools/actions/gitversion/setup@v0
+        uses: gittools/actions/gitversion/setup@v0.11.0
         with:
           versionSpec: 5.x
 
       - name: Execute GitVersion
         id: gitVersion
-        uses: gittools/actions/gitversion/execute@v0
+        uses: gittools/actions/gitversion/execute@v0.11.0
 
-      - name: Create NuGet Packages
+      - name: Create NuGet Package
         shell: bash
         run: nuget pack nuget/logo.nuspec -Version "${{ steps.gitVersion.outputs.SemVer }}"
 

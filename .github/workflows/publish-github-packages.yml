@@ -14,22 +14,9 @@ jobs:
       contents: read
       packages: write
 
-    defaults:
-      run:
-        shell: bash
-
     steps:
 
-      - name: Download Release Assets
-        uses: robinraju/release-downloader@v1.8
-        with:
-          tag: ${{ github.event.release.tag_name }}
-          fileName: "*"
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Publish Packages
-        shell: bash
-        run: |
-          for file in ./*.nupkg; do
-            dotnet nuget push "$file" -s "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" -k "${{ secrets.GITHUB_TOKEN }}"
-          done
+        uses: SharpAttributeParser/actions/dotnet/nuget/release-to-github-packages@v0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
