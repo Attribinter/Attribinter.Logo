@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Attribinter.Logo</id>
-    <version>0.1.0</version>
+
     <title>Attribinter.Logo</title>
+    <description>Hosts the Attribinter logo.</description>
+    <version>0.1.0</version>
+
     <authors>ErikWe</authors>
+    
     <icon>Logo.png</icon>
+    
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    
     <readme>README.nupkg.md</readme>
-    <projectUrl>https://github.com/Attribinter/Logo</projectUrl>
-    <description>Hosts the Attribinter logo.</description>
-    <repository type="git" url="https://github.com/Attribinter/Logo" />
+    
+    <projectUrl>https://github.com/Attribinter/Attribinter.Logo</projectUrl>
+    <repository type="git" url="https://github.com/Attribinter/Attribinter.Logo" />
+    
   </metadata>
+
   <files>
     <file src="README.nupkg.md" target="/" />
     <file src="../Logo.png" target="/" />
