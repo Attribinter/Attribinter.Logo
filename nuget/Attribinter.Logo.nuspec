@@ -10,19 +10,14 @@
 
     <authors>ErikWe</authors>
     
-    <icon>Logo.png</icon>
+    <icon>contentFiles/any/any/Logo.png</icon>
     
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     
-    <readme>README.nupkg.md</readme>
+    <readme>contentFiles/any/any/README.nupkg.md</readme>
     
     <projectUrl>https://github.com/Attribinter/Attribinter.Logo</projectUrl>
     <repository type="git" url="https://github.com/Attribinter/Attribinter.Logo" />
   </metadata>
-
-  <files>
-    <file src="README.nupkg.md" target="/" />
-    <file src="../Logo.png" target="/" />
-  </files>
 </package>
