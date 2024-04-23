@@ -19,6 +19,7 @@
 
     <contentFiles>
       <files include="**/images/*.*" buildAction="EmbeddedResource" /> 
+      <files include="README.nupkg.md" buildAction="Content" />
     </contentFiles>
   </metadata>
 </package>
