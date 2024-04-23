@@ -35,4 +35,4 @@ jobs:
   
       - name: Verify can create NuGet Package
         shell: bash
-        run: nuget pack nuget/logo.nuspec -Version "${{ steps.gitVersion.outputs.SemVer }}"
+        run: nuget pack nuget/Attribinter.Logo.nuspec -Version "${{ steps.gitVersion.outputs.SemVer }}"
