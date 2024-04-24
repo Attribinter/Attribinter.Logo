@@ -8,7 +8,7 @@
     <description>Hosts the Attribinter logo.</description>
     <version>0.1.0</version>
     <authors>ErikWe</authors>
-    <icon>contentFiles/any/any/images/Logo.png</icon>
+    <icon>Logo.png</icon>
     <readme>README.nupkg.md</readme>
     
     <license type="expression">MIT</license>
@@ -18,7 +18,7 @@
     <repository type="git" url="https://github.com/Attribinter/Attribinter.Logo" />
 
     <contentFiles>
-      <files include="**/images/*.*" buildAction="EmbeddedResource" /> 
+      <files include="Logo.png" buildAction="Content" /> 
       <files include="README.nupkg.md" buildAction="Content" />
     </contentFiles>
   </metadata>
