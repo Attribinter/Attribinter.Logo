@@ -1,5 +1,5 @@
-# Attribinter.Logo
+# Paraminter.Logo
 
-Hosts the `Attribinter` logo.
+Hosts the `Paraminter` logo.
 
-See [GitHub](https://github.com/Attribinter/Attribinter.Logo) for more information.
+See [GitHub](https://github.com/Paraminter/Paraminter.Logo) for more information.

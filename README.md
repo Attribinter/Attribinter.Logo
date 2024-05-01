@@ -1,11 +1,11 @@
-# Attribinter.Logo
+# Paraminter.Logo
 
-Hosts the `Attribinter` logo.
+Hosts the `Paraminter` logo.
 
-See [Attribinter](https://www.github.com/Attribinter/Attribinter) for more information.
+See [Paraminter](https://www.github.com/Paraminter/Paraminter) for more information.
 
 ## NuGet
 
 The repository publishes the following NuGet packages:
 
-* [Attribinter.Logo](https://www.nuget.org/packages/Attribinter.Logo/)
+* [Paraminter.Logo](https://www.nuget.org/packages/Paraminter.Logo/)

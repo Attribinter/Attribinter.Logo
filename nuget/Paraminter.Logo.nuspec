@@ -2,10 +2,10 @@
 
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
-    <id>Attribinter.Logo</id>
+    <id>Paraminter.Logo</id>
 
-    <title>Attribinter.Logo</title>
-    <description>Hosts the Attribinter logo.</description>
+    <title>Paraminter.Logo</title>
+    <description>Hosts the Paraminter logo.</description>
     <version>0.1.0</version>
     <authors>ErikWe</authors>
     <icon>Logo.png</icon>
@@ -14,8 +14,8 @@
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     
-    <projectUrl>https://github.com/Attribinter/Attribinter.Logo</projectUrl>
-    <repository type="git" url="https://github.com/Attribinter/Attribinter.Logo" />
+    <projectUrl>https://github.com/Paraminter/Paraminter.Logo</projectUrl>
+    <repository type="git" url="https://github.com/Paraminter/Paraminter.Logo" />
 
     <contentFiles>
       <files include="Logo.png" buildAction="Content" /> 
