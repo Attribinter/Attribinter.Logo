@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - dev
 
 jobs:
   create-github-release:
@@ -36,7 +37,7 @@ jobs:
 
       - name: Create NuGet Package
         shell: bash
-        run: nuget pack nuget/Paraminter.Logo.nuspec -Version "${{ steps.gitVersion.outputs.SemVer }}"
+        run: nuget pack nuget/Paraminter.Logo.nuspec -Version "${{ steps.gitVersion.outputs.SemVer }}" -Suffix "${{ steps.gitVersion.outputs.preReleaseTag }}"
 
       - name: Create GitHub Release
         env:
