@@ -1,3 +1,5 @@
-# Logo
+# Paraminter.Logo
 
-Hosts the logo used by `SharpAttributeParser`.
+Hosts the `Paraminter` logo.
+
+See [GitHub](https://github.com/Paraminter/Paraminter.Logo) for more information.

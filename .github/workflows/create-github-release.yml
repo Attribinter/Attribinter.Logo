@@ -16,7 +16,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
 
@@ -26,17 +26,17 @@ jobs:
           nuget-version: 6.x
 
       - name: Setup GitVersion
-        uses: gittools/actions/gitversion/setup@v0
+        uses: gittools/actions/gitversion/setup@v0.11.0
         with:
           versionSpec: 5.x
 
       - name: Execute GitVersion
         id: gitVersion
-        uses: gittools/actions/gitversion/execute@v0
+        uses: gittools/actions/gitversion/execute@v0.11.0
 
-      - name: Create NuGet Packages
+      - name: Create NuGet Package
         shell: bash
-        run: nuget pack nuget/logo.nuspec -Version "${{ steps.gitVersion.outputs.SemVer }}"
+        run: nuget pack nuget/Paraminter.Logo.nuspec -Version "${{ steps.gitVersion.outputs.SemVer }}"
 
       - name: Create GitHub Release
         env:
@@ -46,8 +46,8 @@ jobs:
             files=$(find . -type f \( -name "*.nupkg" -o -name "*.snupkg" \))
 
             if [ -n "$files" ]; then
-            gh config set prompt disabled
-            gh release create "v${{ steps.gitVersion.outputs.SemVer }}" $(echo $files) --title "v${{ steps.gitVersion.outputs.SemVer }}" --repo "${{ github.repository }}"
+              gh config set prompt disabled
+              gh release create "v${{ steps.gitVersion.outputs.SemVer }}" $(echo $files) --title "v${{ steps.gitVersion.outputs.SemVer }}" --repo "${{ github.repository }}"
             else
-            echo "No NuGet Packages detected, not creating GitHub Release."
+              echo "No NuGet Packages detected, not creating GitHub Release."
             fi
