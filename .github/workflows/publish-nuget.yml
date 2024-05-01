@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish-github-packages:
-    name: Publish to GitHub Packages
+    name: Publish to NuGet
     runs-on: ubuntu-latest
 
     permissions:
